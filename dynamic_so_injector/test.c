@@ -246,12 +246,6 @@ ptraceWrite(int pid, unsigned long long addr, void* data, int len)
 }
 
 void
-injectme(void) {
-    asm("call *%rax\n"
-        "int $0x03\n");
-}
-
-void
 inject(int pid, void* dlopenAddr, char* lib_path)
 {
     struct user_regs_struct oldregs, regs;
