@@ -1,0 +1,3 @@
+this is a very simple injection, we use the LD_PRELOAD environment variable to our advantage.
+run "LD_PRELOAD=./trusted_library.so ./victim/victim" and see how the victim print using our evil print.
+make sure if you decide to create a victim to compile it with the -fno-builtin-printf flag, because otherwise the compiler wwill automatically replace your printf function with put to optimize it and the injection would fail.
